@@ -529,5 +529,5 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.left = elem.basicLeft + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
-  updatePositions();
+  requestAnimationFrame(updatePositions);
 });
