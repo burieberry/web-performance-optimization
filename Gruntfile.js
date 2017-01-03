@@ -6,15 +6,15 @@ module.exports = function(grunt) {
         options: {
           engine: 'im',
           sizes: [{
-            width: 70,
-            quality: 50
+            width: 750,
+            quality: 60
           }]
         },
         files: [{
           expand: true,
           src: ['*.{gif,jpg,png}'],
-          cwd: 'img/original',
-          dest: 'img'
+          cwd: 'views/images/org',
+          dest: 'views/images'
         }]
       }
     },
