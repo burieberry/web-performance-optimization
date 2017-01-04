@@ -32,6 +32,11 @@ form {
 .mover {
   position: fixed;
   width: 256px;
+}
+
+#movingPizzas1 {
+  will-change: transform;
+  position: fixed;
   z-index: -1;
 }
 
