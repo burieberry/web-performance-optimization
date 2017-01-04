@@ -1,12 +1,11 @@
 {
-  "name": "burieberry.github.io",
+  "name": "pr6-mobile-portfolio",
   "version": "1.0.0",
   "description": "Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).",
   "main": "Gruntfile.js",
   "dependencies": {},
   "devDependencies": {
     "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "^1.1.0",
     "grunt-responsive-images": "^1.10.1"
   },
   "scripts": {
@@ -14,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/burieberry/burieberry.github.io.git"
+    "url": "git+https://github.com/udacity/frontend-nanodegree-mobile-portfolio.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/burieberry/burieberry.github.io/issues"
+    "url": "https://github.com/udacity/frontend-nanodegree-mobile-portfolio/issues"
   },
-  "homepage": "https://github.com/burieberry/burieberry.github.io#readme"
+  "homepage": "https://github.com/udacity/frontend-nanodegree-mobile-portfolio#readme"
 }
