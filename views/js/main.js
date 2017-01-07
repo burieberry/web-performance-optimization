@@ -535,7 +535,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   var movingPizzas = document.getElementById("movingPizzas1"); // moved this line outside the loop by declaring new variable
-  for (var i = 0, len = 200, elem; i < len; i++) {    // declare elem var in the initialization of the loop
+  for (var i = 0, len = 24, elem; i < len; i++) {    // declare elem var in the initialization of the loop
     elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
