@@ -455,7 +455,7 @@ var resizePizzas = function(size) {
     }
 
     var randomPizzas = document.getElementsByClassName("randomPizzaContainer"); // changed to getElementsByClassName from querySelectAll
-    for (var i = 0; i < randomPizzas.length; i++) {
+    for (var i = 0, len = randomPizzas.length; i < len; i++) {  // stored array length in local var for efficiency
       randomPizzas[i].style.width = newWidth + "%";
     }
   }
@@ -471,10 +471,10 @@ var resizePizzas = function(size) {
 
 window.performance.mark("mark_start_generating"); // collect timing data
 
+var pizzasDiv = document.getElementById("randomPizzas"); // declared pizzasDiv outside the loop for efficiency
 // This for-loop actually creates and appends all of the pizzas when the page loads
 for (var i = 2; i < 100; i++) {
   'use strict';
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -511,8 +511,8 @@ function updatePositions() {
   var items = document.getElementsByClassName('mover');
   var s = document.body.scrollTop / 1250;
 
-  for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin(s + (i % 5));
+  for (var i = 0, len = items.length, phase; i < len; i++) {    // declare phase variable in initialization; store array length as local var
+    phase = Math.sin(s + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -534,15 +534,16 @@ document.addEventListener('DOMContentLoaded', function() {
   'use strict';
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
-    var elem = document.createElement('img');
+  var movingPizzas = document.getElementById("movingPizzas1"); // moved this line outside the loop by declaring new variable
+  for (var i = 0, len = 200, elem; i < len; i++) {    // declare elem var in the initialization of the loop
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.getElementById("movingPizzas1").appendChild(elem);
+    movingPizzas.appendChild(elem); // here's the movingPizzas variable declared outside the loop used
   }
   updatePositions();
 });

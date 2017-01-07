@@ -34,7 +34,9 @@ This project is for the [Critical Rendering Path course](https://www.udacity.com
 - add `'use strict';` to function definitions
 - use `getElementById()` API call instead of `querySelector` for IDs
 - use `getElementsByClassName` instead of `querySelectorAll` for classes
-
+- store array length variable as local variable in for-loop for efficiency
+- declare variables outside the loop when possible for efficiency
+- declare variable in initialization of for-loop instead of inside the loop for efficiency
 
 
 ### Optimization Tips and Tricks
