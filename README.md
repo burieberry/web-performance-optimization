@@ -28,7 +28,8 @@ This project is for the [Critical Rendering Path course](https://www.udacity.com
 #### Optimizing Frames per Second in pizza.html
 
 **Changes in style file:**
-- add `backface-visibility: hidden;` and `transform: translateZ(0);` and their prefixes to the `.mover` class selector to improve performance.
+- remove .mover class since sliding pizzas are removed
+<!-- - add `backface-visibility: hidden;` and `transform: translateZ(0);` and their prefixes to the `.mover` class selector to improve performance. -->
 
 **Changes in the main.js file:**
 - add `'use strict';` to function definitions
@@ -37,6 +38,7 @@ This project is for the [Critical Rendering Path course](https://www.udacity.com
 - store array length variable as local variable in for-loop for efficiency
 - declare variables outside the loop when possible for efficiency
 - declare variable in initialization of for-loop instead of inside the loop for efficiency
+- remove sliding pizzas as it adds nothing to the design and complicates it
 
 
 ### Optimization Tips and Tricks

@@ -502,52 +502,49 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
-// Moves the sliding background pizzas based on scroll position
-function updatePositions() {
-  'use strict';
-  frame++;
-  window.performance.mark("mark_start_frame");
+// // Moves the sliding background pizzas based on scroll position
+// function updatePositions() {
+//   'use strict';
+//   frame++;
+//   window.performance.mark("mark_start_frame");
 
-  var items = document.getElementsByClassName('mover');
-  var s = document.body.scrollTop / 1250;
+//   var items = document.getElementsByClassName('mover');
+//   var s = document.body.scrollTop / 1250;
 
-  for (var i = 0, len = items.length, phase; i < len; i++) {    // declare phase variable in initialization; store array length as local var
-    phase = Math.sin(s + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
-  }
+//   for (var i = 0, len = items.length, phase; i < len; i++) {    // declare phase variable in initialization; store array length as local var
+//     phase = Math.sin(s + (i % 5));
+//     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+//   }
 
-  // User Timing API to the rescue again. Seriously, it's worth learning.
-  // Super easy to create custom metrics.
-  window.performance.mark("mark_end_frame");
-  window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
-  if (frame % 10 === 0) {
-    var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
-    logAverageFrame(timesToUpdatePosition);
-  }
-}
+//   // User Timing API to the rescue again. Seriously, it's worth learning.
+//   // Super easy to create custom metrics.
+//   window.performance.mark("mark_end_frame");
+//   window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
+//   if (frame % 10 === 0) {
+//     var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
+//     logAverageFrame(timesToUpdatePosition);
+//   }
+// }
 
-// runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
+// // runs updatePositions on scroll
+// window.addEventListener('scroll', updatePositions);
 
-// Generates the sliding pizzas when the page loads.
-document.addEventListener('DOMContentLoaded', function() {
-  'use strict';
-  var cols = 8;
-  var s = 256;
-  var height = Math.floor(window.screen.height / s);
-  console.log(height);
-  var len = cols * height;
-  console.log(len);
-  var movingPizzas = document.getElementById("movingPizzas1"); // moved this line outside the loop by declaring new variable
-  for (var i = 0, elem; i < len; i++) {    // declare elem var in the initialization of the loop
-    elem = document.createElement('img');
-    elem.className = 'mover';
-    elem.src = "images/pizza.png";
-    elem.style.height = "100px";
-    elem.style.width = "73.333px";
-    elem.basicLeft = (i % cols) * s;
-    elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    movingPizzas.appendChild(elem); // here's the movingPizzas variable declared outside the loop used
-  }
-  updatePositions();
-});
+// // Generates the sliding pizzas when the page loads.
+// document.addEventListener('DOMContentLoaded', function() {
+//   'use strict';
+//   var s = 256;
+//   var cols = 8;
+//   var rows = window.screen.availHeight / 100;
+//   var len = cols * rows;
+//   console.log(len);
+//   var movingPizzas = document.getElementById("movingPizzas1"); // moved this line outside the loop by declaring new variable
+//   for (var i = 0, elem; i < len; i++) {    // declare elem var in the initialization of the loop
+//     elem = document.createElement('img');
+//     elem.className = 'mover';
+//     elem.src = "images/pizza_100.png";
+//     elem.basicLeft = (i % cols) * s;
+//     elem.style.top = (Math.floor(i / cols) * s) + 'px';
+//     movingPizzas.appendChild(elem); // here's the movingPizzas variable declared outside the loop used
+//   }
+//   updatePositions();
+// });
