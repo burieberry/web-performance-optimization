@@ -29,7 +29,7 @@ form {
   font-weight: 800;
 }
 
-/*.mover {
+.mover {
   position: fixed;
   z-index: -1;
   width: 73.33px;
@@ -39,7 +39,7 @@ form {
           transform: translateZ(0);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-}*/
+}
 
 .randomPizzaContainer {
   float: left;
