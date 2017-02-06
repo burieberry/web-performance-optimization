@@ -1,10 +1,30 @@
-## Website Performance Optimization portfolio project
+# Website Performance Optimization
 
-This project is for the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
+Goal is to optimize a provided website with a number of optimization- and performance-related issues to achieve a Google PageSpeed score over 90 and have it run at 60 frames per second on mobile and desktop. This project is for the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
 
-### Getting started
+***
 
-#### Optional instructions for running the site on PageSpeed Insights:
+## Getting started
+
+***
+
+### Optimizing Frames per Second in `pizza.html`
+
+**Changes in style file:**
+- add `backface-visibility: hidden;` and `transform: translateZ(0);` and their prefixes to the `.mover` class selector to improve performance.
+
+**Changes in the main.js file:**
+- add `'use strict';` to function definitions
+- use `getElementById()` API call instead of `querySelector` for IDs
+- use `getElementsByClassName` instead of `querySelectorAll` for classes
+- store array length variable as local variable in for-loop for efficiency
+- declare variables outside the loop when possible for efficiency
+- declare variable in initialization of for-loop instead of inside the loop for efficiency
+- use `transform: translateX()` property for sliding pizzas instead of `style.basicLeft`
+
+***
+
+### Optional instructions for running the site on PageSpeed Insights:
 
 1. Check out the repository
 2. To inspect the site on your phone, you can run a local server
@@ -24,23 +44,9 @@ This project is for the [Critical Rendering Path course](https://www.udacity.com
 
 5. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
 
+***
 
-#### Optimizing Frames per Second in pizza.html
-
-**Changes in style file:**
-- add `backface-visibility: hidden;` and `transform: translateZ(0);` and their prefixes to the `.mover` class selector to improve performance.
-
-**Changes in the main.js file:**
-- add `'use strict';` to function definitions
-- use `getElementById()` API call instead of `querySelector` for IDs
-- use `getElementsByClassName` instead of `querySelectorAll` for classes
-- store array length variable as local variable in for-loop for efficiency
-- declare variables outside the loop when possible for efficiency
-- declare variable in initialization of for-loop instead of inside the loop for efficiency
-- use `transform: translateX()` property for sliding pizzas instead of `style.basicLeft`
-
-
-### Optimization Tips and Tricks
+#### Optimization Tips and Tricks
 * [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
 * [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
 * [Optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path.html "optimize the crp!")
@@ -52,8 +58,12 @@ This project is for the [Critical Rendering Path course](https://www.udacity.com
 * <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization.html">Optimize images</a>
 * <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching.html">HTTP caching</a>
 
-### Customization with Bootstrap
+***
+
+#### Customization with Bootstrap
 The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstrap</a> framework. All custom styles are in `dist/css/portfolio.css` in the portfolio repo.
 
 * <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
 * <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
+
+***
